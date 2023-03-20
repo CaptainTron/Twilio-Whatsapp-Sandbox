@@ -10,17 +10,17 @@ const client = require('twilio')(accountSid, authToken);
 
 
 // This wil wait for request and send mesage to the whatsapp message
-const SendMessage = (SendTo, SendMessages, Media) => {
+const SendMessage = async(SendTo, SendMessages, Media) => {
     try {
-        client.messages
+       const sendmessage = await client.messages
             .create({
                 body: `${SendMessages}`,
                 from: `whatsapp:${process.env.PHONE_NUMBER}`,
                 to: `whatsapp:${SendTo}`,
                 mediaUrl: [Media]
             })
-            .then(message => console.log(message.sid))
-            .done();
+            return sendmessage.sid;
+            
     } catch (error) {
         console.log(error.message);
     }
