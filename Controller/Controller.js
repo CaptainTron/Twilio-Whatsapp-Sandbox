@@ -8,11 +8,11 @@ const SendMessage = async (req, res) => {
 
         // Check wheather the user has provided Phone number and Message or not
         if(!PhoneNumber || !Message){
-            res.status(400).json({message:"Phone Number or Message Body Is Missing from body"})
+            res.status(400).json({message:"Phone Number or Message Body Is Missing"})
             return;
         }
         SendMessages(PhoneNumber, Message, Media)
-        res.status(200).json({ message: `${Message} Send to : -  ${PhoneNumber}` })
+        res.status(200).json({ message: `"${Message}" Send to : -  "${PhoneNumber}"` })
     }
     // if any exception or error arises in user input.
     catch (err) {

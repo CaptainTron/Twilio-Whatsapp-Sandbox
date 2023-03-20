@@ -1,7 +1,6 @@
 // this module for enviromental variable
 require('dotenv').config();
 
-
 // call the environmental file 
 const accountSid = process.env.ACCOUNT_SID; // Your Account SID from www.twilio.com/console
 const authToken = process.env.AUTH_TOKEN; // Your Auth Token from www.twilio.com/console
@@ -24,7 +23,7 @@ const SendMessage = (SendTo, SendMessages, Media) => {
             .done();
     } catch (error) {
         console.log(error.message);
-    } 
+    }
 }
 
 
