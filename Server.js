@@ -17,4 +17,4 @@ app.use("/api/twilio/sendmessage", SendRouter)
 
 // Create server port or use local port otherwise
 const port = process.env.PORT || 3000
-app.listen(3000, console.log(`Server is Listening On port ${port}....`))
+app.listen(port, console.log(`Server is Listening On port ${port}....`))
